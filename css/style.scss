@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+$background: #efefef;
+$lfs-blue: #006ac6;
+$lfs-yellow: #fab700;
+$lfs-grey: #75787b;
+*{
+  font-family: 'Roboto', sans-serif;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+  background: $background;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.popup {
+  display: none;
+  position: relative;
+  z-index: 3333;
+
+  .substrate {
+    height: 100%;
+    width: 100%;
+    background: rgba(33, 33, 33, .75);
+    position: fixed;
+    z-index: 1111;
+    top: 0;
+  }
+
+  .container-popup {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 30px;
+    z-index: 4444;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 800px;
+    max-height: calc(100% - 60px);
+    background: white;
+
+    .close-popup {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      text-align: center;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      transition: .3s;
+      line-height: 30px;
+      font-size: 14px;
+
+      &:hover {
+        background: #eee;
+      }
+    }
+    .title-popup {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      color: black;
+      padding-bottom: 10px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+table {
+  width: 100%;
+  background: white;
+  thead {
+    border-top: 2px solid $lfs-yellow;
+    border-bottom: 2px solid $lfs-yellow;
+    th {
+      text-align:left;
+      text-transform: uppercase;
+      padding: 10px;
+      color: $lfs-blue;
+      border: 1px solid #F1F1F1;
+    }
+  }
+
+    tr {
+      border-bottom: 1px solid #F1F1F1;
+      color: $lfs-grey;
+      &.dataset{
+        cursor: pointer;
+      }
+      td {
+        padding: 10px;
+        border: 1px solid #F1F1F1;
+        p{
+          background: #fefefe;
+          padding: 10px;
+          font-weight: bold;
+          &:nth-child(even) {
+            background: #006ac6;
+            color: white;
+          }
+        }
+      }
+      th {
+        padding-left: 10px;
+        border: 1px solid #F1F1F1;
+      }
+    }
+
+  tfoot {
+    color: $lfs-yellow;
+    font-style: italic;
+    border-bottom: 2px solid $lfs-yellow;
+    tr {
+      td {
+        padding: 10px;
+        border: 1px solid #F1F1F1;
+      }
+    }
+  }
+  input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+}
+.btn{
+  width: auto;
+  padding: 10px 25px;
+  background: $lfs-blue;
+  color: white;
+  border: none;
+  outline: none;
+  margin: auto;
+  display: block;
+  &.btn-delete{
+    background: #bd1e1e;
+  }
+  &:hover{
+    cursor: pointer;
+    font-weight: bold;
+  }
+}
+
+.help-flex {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-items: center;
+  .btn{
+    display: inline-block;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .popup .container-popup{
+  padding: 30px 10px;
+    max-width: calc(100% - 40px);
+    max-height: calc(100% - 80px);
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "seller/avatar",
+  "minimum-stability": "stable",
+  "description": "test-task",
+  "require": {
+    "nikic/fast-route": "^1.3",
+    "voku/simple-mysqli": "8.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "app\\": "./"
+    }
+  }
+}

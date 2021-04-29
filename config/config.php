@@ -1,8 +1,8 @@
 <?php
-$config = array(
-    'DB_HOST'=>'127.0.0.1',
-    'DB_USERNAME'=>'root',
-    'DB_PASSWORD'=>'',
-    'DB_DATABASE'=>''
-);
-?>
+
+CONST DB_HOST = '127.0.0.1';
+CONST DB_USERNAME = 'root';
+CONST DB_PASSWORD = 'root';
+CONST DB_DATABASE = 'seller_avatar';
+
+
